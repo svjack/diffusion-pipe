@@ -44,6 +44,8 @@ Create the environment:
 ```
 conda create -n diffusion-pipe python=3.12
 conda activate diffusion-pipe
+pip install ipykernel
+python -m ipykernel install --user --name diffusion-pipe --display-name "diffusion-pipe"
 ```
 
 Install nvcc: https://anaconda.org/nvidia/cuda-nvcc. Probably try to make it match the CUDA version that was installed on your system with PyTorch.
@@ -52,6 +54,25 @@ Install the dependencies:
 ```
 pip install -r requirements.txt
 pip install flash-attn
+```
+
+## Download models 
+```bash
+git clone https://huggingface.co/Kijai/HunyuanVideo_comfy
+git clone https://huggingface.co/Kijai/llava-llama-3-8b-text-encoder-tokenizer
+git clone https://huggingface.co/openai/clip-vit-large-patch14
+```
+
+## Download dataset 
+```bash
+#### 不能使用太短的视频
+huggingface-cli download \
+  --repo-type dataset svjack/video-dataset-genshin-impact-ep-landscape-organized \
+  --local-dir video-dataset-genshin-impact-ep-landscape-organized
+
+mkdir Genshin-Impact-Landscape
+cp video-dataset-genshin-impact-ep-landscape-organized/*.mp4 Genshin-Impact-Landscape
+cp video-dataset-genshin-impact-ep-landscape-organized/*.txt Genshin-Impact-Landscape
 ```
 
 ## Training
