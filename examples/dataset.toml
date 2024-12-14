@@ -17,7 +17,8 @@ frame_buckets = [1, 33, 65]
 [[directory]]
 # Path to directory of images/videos, and corresponding caption files. The caption files should match the media file name, but with a .txt extension.
 # A missing caption file will log a warning, but then just train using an empty caption.
-path = '/home/anon/data/images/grayscale'
+#path = '/home/anon/data/images/grayscale'
+path = "/home/featurize/diffusion-pipe/Genshin-Impact-Landscape"
 # The dataset will act like it is duplicated this many times.
 num_repeats = 10
 

@@ -1,5 +1,5 @@
 # Output path for training runs. Each training run makes a new directory in here.
-output_dir = '/data/diffusion_pipe_training_runs/hunyuan_video_test'
+output_dir = 'hunyuan_video_test'
 
 # Dataset config file.
 dataset = 'examples/dataset.toml'
@@ -66,10 +66,15 @@ type = 'hunyuan-video'
 # Can load Hunyuan Video entirely from the ckpt path set up for the official inference scripts.
 #ckpt_path = '/home/anon/HunyuanVideo/ckpts'
 # Or you can load it by pointing to all the ComfyUI files.
-transformer_path = '/data2/imagegen_models/hunyuan_video_comfyui/hunyuan_video_720_cfgdistill_fp8_e4m3fn.safetensors'
-vae_path = '/data2/imagegen_models/hunyuan_video_comfyui/hunyuan_video_vae_bf16.safetensors'
-llm_path = '/data2/imagegen_models/hunyuan_video_comfyui/llava-llama-3-8b-text-encoder-tokenizer'
-clip_path = '/data2/imagegen_models/hunyuan_video_comfyui/clip-vit-large-patch14'
+#transformer_path = '/data2/imagegen_models/hunyuan_video_comfyui/hunyuan_video_720_cfgdistill_fp8_e4m3fn.safetensors'
+#vae_path = '/data2/imagegen_models/hunyuan_video_comfyui/hunyuan_video_vae_bf16.safetensors'
+#llm_path = '/data2/imagegen_models/hunyuan_video_comfyui/llava-llama-3-8b-text-encoder-tokenizer'
+#clip_path = '/data2/imagegen_models/hunyuan_video_comfyui/clip-vit-large-patch14'
+transformer_path = '/home/featurize/diffusion-pipe/HunyuanVideo_comfy/hunyuan_video_720_cfgdistill_fp8_e4m3fn.safetensors'
+vae_path = '/home/featurize/diffusion-pipe/HunyuanVideo_comfy/hunyuan_video_vae_bf16.safetensors'
+llm_path = '/home/featurize/diffusion-pipe/llava-llama-3-8b-text-encoder-tokenizer'
+clip_path = '/home/featurize/diffusion-pipe/clip-vit-large-patch14'
+
 # Base dtype used for all models.
 dtype = 'bfloat16'
 # Hunyuan Video supports fp8 for the transformer when training LoRA.
