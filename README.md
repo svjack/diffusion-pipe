@@ -29,7 +29,7 @@ sudo apt-get update && sudo apt-get install git-lfs ffmpeg cbm
 ```
 
 ```
-git clone --recurse-submodules https://github.com/tdrussell/diffusion-pipe
+git clone --recurse-submodules https://github.com/svjack/diffusion-pipe
 ```
 
 If you alread cloned it and forgot to do --recurse-submodules:
@@ -51,6 +51,7 @@ Install nvcc: https://anaconda.org/nvidia/cuda-nvcc. Probably try to make it mat
 Install the dependencies:
 ```
 pip install -r requirements.txt
+pip install flash-attn
 ```
 
 ## Training
