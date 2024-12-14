@@ -24,6 +24,10 @@ There are reports that it doesn't work on Windows. This is because Deepspeed onl
 
 ## Installing
 Clone the repository:
+```bash
+sudo apt-get update && sudo apt-get install git-lfs ffmpeg cbm
+```
+
 ```
 git clone --recurse-submodules https://github.com/tdrussell/diffusion-pipe
 ```
