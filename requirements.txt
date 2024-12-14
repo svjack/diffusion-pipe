@@ -19,4 +19,4 @@ av
 einops
 accelerate
 loguru
-flash-attn
+#flash-attn
