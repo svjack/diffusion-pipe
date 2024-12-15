@@ -4,8 +4,11 @@ resolutions = [512]
 # Enable aspect ratio bucketing.
 enable_ar_bucket = true
 # Min and max aspect ratios, given as width/height ratio.
-min_ar = 0.5
-max_ar = 2.0
+#min_ar = 0.5
+#max_ar = 2.0
+min_ar = 0.1
+max_ar = 5.0
+
 # Total number of aspect ratio buckets, evenly spaced (in log space) between min_ar and max_ar.
 num_ar_buckets = 7
 
@@ -18,9 +21,10 @@ frame_buckets = [1, 33, 65]
 # Path to directory of images/videos, and corresponding caption files. The caption files should match the media file name, but with a .txt extension.
 # A missing caption file will log a warning, but then just train using an empty caption.
 #path = '/home/anon/data/images/grayscale'
-path = "/home/featurize/diffusion-pipe/Genshin-Impact-Landscape"
+#path = "/home/featurize/diffusion-pipe/Genshin-Impact-Landscape"
+path = "/home/featurize/diffusion-pipe/Genshin-Impact-XiangLing-Long"
 # The dataset will act like it is duplicated this many times.
-num_repeats = 10
+num_repeats = 1
 
 
 # You can list multiple directories.
