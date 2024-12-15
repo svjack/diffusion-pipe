@@ -64,6 +64,7 @@ git clone https://huggingface.co/openai/clip-vit-large-patch14
 ```
 
 ## Download dataset 
+- Genshin Impact Landscape
 ```bash
 #### 不能使用太短的视频
 huggingface-cli download \
@@ -73,6 +74,77 @@ huggingface-cli download \
 mkdir Genshin-Impact-Landscape
 cp video-dataset-genshin-impact-ep-landscape-organized/*.mp4 Genshin-Impact-Landscape
 cp video-dataset-genshin-impact-ep-landscape-organized/*.txt Genshin-Impact-Landscape
+```
+
+- Genshin Impact Character Xiangling
+```bash
+#### 不能使用太短的视频
+huggingface-cli download \
+  --repo-type dataset svjack/Genshin-Impact-XiangLing-animatediff-with-score-organized \
+  --local-dir Genshin-Impact-XiangLing-animatediff-with-score-organized
+
+mkdir Genshin-Impact-XiangLing
+cp Genshin-Impact-XiangLing-animatediff-with-score-organized/*.mp4 Genshin-Impact-XiangLing
+cp Genshin-Impact-XiangLing-animatediff-with-score-organized/*.txt Genshin-Impact-XiangLing
+```
+```python
+!pip install moviepy==1.0.3
+import os
+import shutil
+from moviepy.editor import VideoFileClip
+from tqdm import tqdm
+
+def process_videos(input_folder, output_folder, target_duration=60):
+    """
+    处理输入文件夹中的视频文件，循环视频以达到目标时长，并将结果保存到输出文件夹。
+    同时直接拷贝其他非视频文件。
+
+    参数:
+    input_folder (str): 输入文件夹路径
+    output_folder (str): 输出文件夹路径
+    target_duration (int): 目标视频时长（秒），默认为60秒
+    """
+    # 创建输出文件夹
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
+
+    # 获取输入文件夹中的所有文件
+    files = os.listdir(input_folder)
+
+    for file in tqdm(files, desc="Processing files"):
+        input_path = os.path.join(input_folder, file)
+        output_path = os.path.join(output_folder, file)
+
+        # 检查文件是否为视频文件（简单判断扩展名）
+        if file.lower().endswith(('.mp4', '.avi', '.mov', '.mkv')):
+            # 打开视频文件
+            clip = VideoFileClip(input_path)
+
+            # 计算需要循环的次数
+            loop_count = int(target_duration // clip.duration) + 1
+
+            # 循环视频
+            looped_clip = clip.loop(loop_count)
+
+            # 裁剪到目标时长
+            looped_clip = looped_clip.subclip(0, target_duration)
+
+            # 保存循环后的视频
+            looped_clip.write_videofile(output_path, codec='libx264')
+
+            # 关闭视频文件
+            clip.close()
+            looped_clip.close()
+        else:
+            # 直接拷贝非视频文件
+            shutil.copy(input_path, output_path)
+
+    print("处理完成！")
+
+# 示例调用
+input_folder = "Genshin-Impact-XiangLing"
+output_folder = "Genshin-Impact-XiangLing-Long"
+process_videos(input_folder, output_folder, 6)
 ```
 
 ## Training
