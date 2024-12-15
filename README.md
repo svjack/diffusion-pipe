@@ -146,6 +146,12 @@ input_folder = "Genshin-Impact-XiangLing"
 output_folder = "Genshin-Impact-XiangLing-Long"
 process_videos(input_folder, output_folder, 6)
 ```
+- Tune result
+  
+
+
+https://github.com/user-attachments/assets/e3bce8ba-cb37-4c7b-a1fc-973cb6dc4cfb
+
 
 ## Training
 **Start by reading through the config files in the examples directory.** Almost everything is commented, explaining what each setting does.
