@@ -1,5 +1,5 @@
 # Output path for training runs. Each training run makes a new directory in here.
-output_dir = 'hunyuan_video_test'
+output_dir = 'hunyuan_video_char_test'
 
 # Dataset config file.
 dataset = 'examples/dataset.toml'
@@ -94,7 +94,8 @@ timestep_sample_method = 'logit_normal'
 
 [adapter]
 type = 'lora'
-rank = 32
+#rank = 32
+rank = 128
 # Dtype for the LoRA weights you are training.
 dtype = 'bfloat16'
 # You can initialize the lora weights from a previously trained lora.
