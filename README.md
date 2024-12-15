@@ -147,7 +147,7 @@ output_folder = "Genshin-Impact-XiangLing-Long"
 process_videos(input_folder, output_folder, 6)
 ```
 - Tune result (Epoch 4 seed 42 prompt: solo,Xiangling, cook rice in a pot genshin impact ,1girl,highres,)
-  
+- Inference in https://github.com/svjack/ComfyUI-HunyuanVideoWrapper
 
 
 https://github.com/user-attachments/assets/e3bce8ba-cb37-4c7b-a1fc-973cb6dc4cfb
