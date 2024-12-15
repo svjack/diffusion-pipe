@@ -146,7 +146,7 @@ input_folder = "Genshin-Impact-XiangLing"
 output_folder = "Genshin-Impact-XiangLing-Long"
 process_videos(input_folder, output_folder, 6)
 ```
-- Tune result
+- Tune result (Epoch 4 seed 42 prompt: solo,Xiangling, cook rice in a pot genshin impact ,1girl,highres,)
   
 
 
